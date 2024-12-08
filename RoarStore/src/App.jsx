@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
+import React from "react";
+import AnimatedBg from "react-animated-bg";
+import FloatingParticles from './FloatingParticles';
+
 
 export default function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   // Toggle theme function
   const toggleTheme = () => {
@@ -10,6 +14,24 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // const imagesList = [
+  //   'url("https://images.dog.ceo/breeds/labrador/n02099712_3503.jpg")',
+  //   'url("https://images.dog.ceo/breeds/labrador/n02099712_5844.jpg")',
+  //   'url("https://images.dog.ceo/breeds/labrador/n02099712_5343.jpg")',
+  //   'url("https://images.dog.ceo/breeds/labrador/n02099712_7481.jpg")',
+  //   'url("https://images.dog.ceo/breeds/labrador/n02099712_7414.jpg")'
+  // ];
+
+  // by default delay = 0 and duration = 0.2s
+
+
   // Set initial theme
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -17,15 +39,21 @@ export default function App() {
 
   return (
     <>
-      <div className="navbar bg-base-100 font-sora">
+      <div className="navbar bg-base-100 font-sora sticky top-0 z-50">
         <div className="flex-1">
           <a className="btn btn-ghost text-3xl">FHS Roar Store</a>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1 text-xl">
-            <li><a>Link</a></li>
+            <li><a onClick={() => scrollToSection('about')}>About</a></li>
             <li>
-              <a>Socials</a>
+              <a onClick={() => scrollToSection('promotions')}>Promotions</a>
+            </li>
+            <li>
+              <a onClick={() => scrollToSection('socials')}>Socials</a>
+            </li>
+            <li>
+              <a onClick={() => scrollToSection('employee')}>Employee</a>
             </li>
             <li>
               <label className="swap swap-rotate">
@@ -55,6 +83,53 @@ export default function App() {
           </ul>
         </div>
       </div>
+
+      <div className='font-sora'>
+        {/* <AnimatedBg
+          colors={["black", "grey", "black"]}
+          duration={2}
+          timingFunction="ease-out"
+          className="section-styles">
+
+          <section className="min-h-screen p-8 flex items-center justify-center">
+
+            <h1 className="text-5xl font-bold">Welcome to FHS Roar Store</h1>
+
+
+          </section>
+        </AnimatedBg> */}
+
+
+
+        {/* <section className="min-h-screen p-8 flex items-center justify-center">
+
+          <h1 className="text-5xl font-bold">Welcome to FHS Roar Store</h1>
+
+
+        </section> */}
+
+        <FloatingParticles>
+          <h1 className="text-5xl font-bold">Welcome to the FHS Roar Store</h1>
+        </FloatingParticles>
+
+        <section id="about" className="min-h-screen p-8 flex items-center justify-center">
+
+          <h2 className="text-4xl font-bold">About The Roar Store</h2>
+        </section>
+
+        <section id="promotions" className="min-h-screen p-8 flex items-center justify-center bg-base-200">
+          <h2 className="text-4xl font-bold">Ongoing Promotions</h2>
+        </section>
+
+        <section id="socials" className="min-h-screen p-8 flex items-center justify-center">
+          <h2 className="text-4xl font-bold">Socials</h2>
+        </section>
+
+        <section id="employee" className="min-h-screen p-8 flex items-center justify-center bg-base-200">
+          <h2 className="text-4xl font-bold">Employee</h2>
+        </section>
+      </div>
+
     </>
   );
 }
