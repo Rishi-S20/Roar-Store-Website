@@ -94,7 +94,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Rest of your content remains the same */}
+
       <div className='font-sora'>
         <FloatingParticles>
           <h1 className="text-5xl font-bold">Welcome to the FHS Roar Store</h1>
@@ -102,6 +102,8 @@ export default function App() {
 
 
         <About />
+
+        
 
 
         <Promotions />
