@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from "motion/react"
+
+
 import saberMerch from '../assets/saber-merch.jpeg'  // adjust extension if needed (.jpg, .png, .jpeg)
 
 const About = () => {
