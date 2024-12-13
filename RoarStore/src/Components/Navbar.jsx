@@ -34,8 +34,8 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1 text-xl">
                     <li><a onClick={() => scrollToSection('about')}>About</a></li>
                     <li><a onClick={() => scrollToSection('promotions')}>Promotions</a></li>
+                    <li><a onClick={() => scrollToSection('popItems')}>Popular Items</a></li>
                     <li><a onClick={() => scrollToSection('socials')}>Socials</a></li>
-                    <li><a onClick={() => scrollToSection('employee')}>Employee</a></li>
                     <li>
                         <label className="swap swap-rotate">
                             <input
