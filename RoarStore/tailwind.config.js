@@ -13,6 +13,32 @@ export default {
     extend: {
       fontFamily: {
         sora: ["Sora", "serif"],
+      },
+      animation: {
+        gradient: 'gradient 10s ease infinite',
+      },
+      keyframes: {
+        gradient: {
+          '0%': {
+            'background-position': '0% 50%',
+            'background-size': '400% 400%'
+          },
+          '33%': {
+            'background-position': '100% 50%',
+            'background-size': '300% 300%'
+          },
+          '66%': {
+            'background-position': '50% 100%',
+            'background-size': '200% 200%'
+          },
+          '100%': {
+            'background-position': '0% 50%',
+            'background-size': '400% 400%'
+          }
+        }
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     },
   },
@@ -29,7 +55,7 @@ export default {
           "success": "#36D399",          // success color
           "warning": "#FBBD23",          // warning color
           "error": "#F87272",            // error color
-          "base-content": "#d1a63d",
+          "base-content": "black",
         },
         dark: {
           "primary": "#793EF9",
@@ -41,7 +67,7 @@ export default {
           "success": "#36D399",
           "warning": "#FBBD23",
           "error": "#F87272",
-          "base-content": "#d1a63d",
+          "base-content": "#ffffcc",
         },
       }
     ]

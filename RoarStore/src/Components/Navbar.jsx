@@ -2,8 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 
 
-const Navbar = () => {
-    const [theme, setTheme] = useState('dark');
+const Navbar = ({ theme, setTheme }) => {
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
@@ -15,17 +14,13 @@ const Navbar = () => {
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
     };
 
 
 
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-    }, []);
 
     return (
-        <div className="navbar bg-base-100 font-sora sticky top-0 z-50 shadow-xl">
+        <div className="navbar backdrop-blur-xl font-sora sticky top-0 z-50 shadow-xl">
             <div className="flex-1">
                 <a className="text-3xl font-bold pl-3">FHS Roar Store</a>
             </div>
