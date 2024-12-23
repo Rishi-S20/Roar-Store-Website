@@ -31,7 +31,7 @@ const About = ({ theme }) => {
                 <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ margin: "-100px", once: true }}
+                    viewport={{ margin: "-100px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="card bg-base-100 w-96 shadow-xl"
                 >
